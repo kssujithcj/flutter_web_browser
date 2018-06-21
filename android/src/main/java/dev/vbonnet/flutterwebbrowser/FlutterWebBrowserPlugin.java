@@ -44,6 +44,7 @@ public class FlutterWebBrowserPlugin implements MethodCallHandler {
       String toolbarColorArg = call.argument("android_toolbar_color");
 
       CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+      builder.addDefaultShareMenuItem();
       if (toolbarColorArg != null) {
         int toolbarColor = Color.parseColor(toolbarColorArg);
         builder.setToolbarColor(toolbarColor);
